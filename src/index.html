@@ -3,8 +3,11 @@
     <script>
         async function getHelloMessage() {
             try {
+                /*const val = document.querySelector('input').value;
+                console.log(val);*/
+
                 const response = await fetch(`http://
-localhost:3000/hello/everyone`, {
+localhost:3000/hello/`+ document.querySelector('input').value, {
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -16,6 +19,8 @@ localhost:3000/hello/everyone`, {
             }
         }
     </script>
+   
+   <input type="text" name="ici" value="là"/>  
 </header>
 <button onclick="getHelloMessage()">Cliquez ici</button>
 </body>
